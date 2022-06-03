@@ -1,5 +1,6 @@
 package com.liliane.workoutlog
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -14,6 +15,7 @@ class SignInActivity : AppCompatActivity() {
     lateinit var tilPassword:TextInputLayout
     lateinit var etPassword:TextInputEditText
     lateinit var tvSignUP:TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
@@ -26,6 +28,10 @@ class SignInActivity : AppCompatActivity() {
 
 
         btnLogin.setOnClickListener { validateLogin()}
+        tvSignUP.setOnClickListener{
+            var intent=Intent(this,SignUpActivity::class.java)
+            startActivity(intent)
+        }
     }
     fun validateLogin(){
         var error = false
@@ -41,6 +47,9 @@ class SignInActivity : AppCompatActivity() {
         if (email.isBlank()){
             tilEmail.error="Email is required"
             error=true
+        }
+        if (!error){
+
         }
     }
 }
