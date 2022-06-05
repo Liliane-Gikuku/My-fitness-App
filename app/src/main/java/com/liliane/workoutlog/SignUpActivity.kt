@@ -52,9 +52,29 @@ class SignUpActivity : AppCompatActivity() {
             error=true
         }
 
+        var firstName=etName.text.toString()
+        if(firstName.isBlank()){
+            tilName.error="First name is required"
+            error=true
+        }
+
+        var secondName=etSecondName.text.toString()
+        if(secondName.isBlank()){
+            tilSecondName.error="Second name is required"
+            error=true
+        }
+
         var password=etPass.text.toString()
         if (password.isBlank()){
             tilPass.error="Password is required"
+            error=true
+        }
+
+        var confirmPassword=etConfirm.text.toString()
+        //if (confirmPassword==password){
+        if(confirmPassword.isBlank()){
+
+            tilConfirm.error="Password should match"
             error=true
         }
         if(!error){
