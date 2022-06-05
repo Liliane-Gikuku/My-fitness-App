@@ -3,6 +3,7 @@
     <string name="enter_password">Enter Password</string>
     <string name="enter_email">Enter Email</string>
     <string name="login">Login</string>
-    <string name="sign_up">Don\'t have account? <u>SignUp</u></string>
+
     <string name="log">Already have account? <u>Login</u></string>
+    <string name="SignUp">Don\'t have account? <u>SignUp</u></string>
 </resources>
