@@ -27,10 +27,12 @@ class SignInActivity : AppCompatActivity() {
         tvSignUP=findViewById(R.id.tvSignUp)
 
 
-        btnLogin.setOnClickListener { validateLogin()}
+        btnLogin.setOnClickListener { validateLogin()
+            startActivity(Intent(this,HomeActivity::class.java))}
         tvSignUP.setOnClickListener{
             var intent=Intent(this,SignUpActivity::class.java)
             startActivity(intent)
+
         }
     }
     fun validateLogin(){
@@ -49,6 +51,7 @@ class SignInActivity : AppCompatActivity() {
             error=true
         }
         if (!error){
+            //startActivity(Intent(this,HomeActivity::class.java))
 
         }
     }

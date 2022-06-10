@@ -3,6 +3,7 @@ package com.liliane.workoutlog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
@@ -51,6 +52,12 @@ class SignUpActivity : AppCompatActivity() {
             tilAddress.error="Email is a required field"
             error=true
         }
+        if(!Patterns.EMAIL_ADDRESS.matcher(Address).matches()){
+            tilAddress.error="Not a valid email address"
+            error=true
+            //REGULAR EXPRESSIONS
+
+        }
 
         var firstName=etName.text.toString()
         if(firstName.isBlank()){
@@ -71,14 +78,17 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         var confirmPassword=etConfirm.text.toString()
-        //if (confirmPassword==password){
-        if(confirmPassword.isBlank()){
+        if (confirmPassword!=password){
+
 
             tilConfirm.error="Password should match"
             error=true
-        }
-        if(!error){
 
+       // if(!error){
+            if(confirmPassword.isBlank()){
+                tilConfirm.error="Confirm password"
+                error=true
+            }
         }
     }
 }
