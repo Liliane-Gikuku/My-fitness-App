@@ -1,12 +1,8 @@
-package com.liliane.workoutlog
+package com.liliane.workoutlog.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 import com.liliane.workoutlog.databinding.ActivitySignInBinding
 
 class SignInActivity : AppCompatActivity() {
@@ -24,9 +20,9 @@ class SignInActivity : AppCompatActivity() {
 
 
         binding.btnLogin.setOnClickListener { validateLogin()
-            startActivity(Intent(this,HomeActivity::class.java))}
+            startActivity(Intent(this, HomeActivity::class.java))}
         binding.tvSignUp.setOnClickListener{
-            var intent=Intent(this,SignUpActivity::class.java)
+            var intent=Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 

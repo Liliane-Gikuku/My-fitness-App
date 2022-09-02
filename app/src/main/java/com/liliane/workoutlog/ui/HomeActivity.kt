@@ -1,9 +1,10 @@
-package com.liliane.workoutlog
+package com.liliane.workoutlog.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentContainerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.liliane.workoutlog.R
 
 class HomeActivity : AppCompatActivity() {
     lateinit var bnvHome: BottomNavigationView
@@ -24,18 +25,19 @@ class HomeActivity : AppCompatActivity() {
         bnvHome.setOnItemSelectedListener { item ->
             when(item.itemId){
                 R.id.plan ->{
-                    supportFragmentManager.beginTransaction().replace(R.id.fcvHome,PlanFragment()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.fcvHome, PlanFragment()).commit()
                     true
                 }
                 R.id.track ->{
                     var transaction=supportFragmentManager.beginTransaction()
-                    transaction.replace(R.id.fcvHome,TrackFragment())
+
+                    transaction.replace(R.id.fcvHome, TrackFragment())
                     transaction.commit()
                     true
                 }
-                R.id.profile->{
+                R.id.profile ->{
                     var transaction=supportFragmentManager.beginTransaction()
-                    transaction.replace(R.id.fcvHome,ProfileFragment())
+                    transaction.replace(R.id.fcvHome, ProfileFragment())
                     transaction.commit()
                     true
 
